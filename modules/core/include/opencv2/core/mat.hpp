@@ -2363,6 +2363,9 @@ typedef Mat_<Vec2d> Mat2d;
 typedef Mat_<Vec3d> Mat3d;
 typedef Mat_<Vec4d> Mat4d;
 
+typedef Mat_<int64_t> Mat1l;
+typedef Mat_<int64_t> Mat1ul;
+
 /** @todo document */
 class CV_EXPORTS UMat
 {
@@ -3594,7 +3597,8 @@ CV_EXPORTS MatExpr operator <= (const Mat& a, const Mat& b);
 CV_EXPORTS MatExpr operator <= (const Mat& a, double s);
 CV_EXPORTS MatExpr operator <= (double s, const Mat& a);
 
-CV_EXPORTS MatExpr operator == (const Mat& a, const Mat& b);
+CV_EXPORTS bool operator == (const Mat& a, const Mat& b);
+//CV_EXPORTS MatExpr operator == (const Mat& a, const Mat& b);
 CV_EXPORTS MatExpr operator == (const Mat& a, double s);
 CV_EXPORTS MatExpr operator == (double s, const Mat& a);
 

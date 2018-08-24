@@ -262,6 +262,21 @@ public:
 };
 
 
+template<> class DataType<int64_t>
+{
+public:
+    typedef double      value_type;
+    typedef value_type  work_type;
+    typedef value_type  channel_type;
+    typedef value_type  vec_type;
+    enum { generic_type = 0,
+           depth        = CV_64F,
+           channels     = 1,
+           fmt          = (int)'l',
+           type         = CV_MAKETYPE(depth, channels)
+         };
+};
+
 /** @brief A helper class for cv::DataType
 
 The class is specialized for each fundamental numerical data type supported by OpenCV. It provides

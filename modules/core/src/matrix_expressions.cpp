@@ -937,12 +937,19 @@ MatExpr operator <= (double s, const Mat& a)
     return e;
 }
 
+bool operator == (const Mat& a, const Mat& b)
+{
+	return a.data == b.data;	
+}
+
+/*
 MatExpr operator == (const Mat& a, const Mat& b)
 {
     MatExpr e;
     MatOp_Cmp::makeExpr(e, CV_CMP_EQ, a, b);
     return e;
 }
+*/
 
 MatExpr operator == (const Mat& a, double s)
 {
