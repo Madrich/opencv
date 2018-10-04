@@ -1224,7 +1224,8 @@ macro(__ocv_push_target_link_libraries)
     endif()
     set(OPENCV_MODULE_${target}_LINK_DEPS ${OPENCV_MODULE_${target}_LINK_DEPS} ${ARGN} CACHE INTERNAL "" FORCE)
   else()
-    target_link_libraries(${target} ${ARGN})
+    target_link_libraries(${target} ${ARGN})	
+	set_target_properties(${target} PROPERTIES SUFFIX "PC.dll") #
   endif()
 endmacro()
 

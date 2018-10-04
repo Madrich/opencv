@@ -679,7 +679,7 @@ void cv::approxPolyDP( InputArray _curve, OutputArray _approxCurve,
 
     Mat curve = _curve.getMat();
     int npoints = curve.checkVector(2), depth = curve.depth();
-    CV_Assert( npoints >= 0 && (depth == CV_32S || depth == CV_32F));
+    CV_Assert( npoints >= 0 && (depth == CV_32S || depth == CV_32F || depth == CV_64F));
 
     if( npoints == 0 )
     {

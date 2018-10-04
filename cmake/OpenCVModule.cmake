@@ -917,6 +917,9 @@ macro(_ocv_create_module)
     ${${the_module}_pch}
     ${_VS_VERSION_FILE}
   )
+  
+  message("Add_Library ${the_module} ${OPENCV_LIBVERSION}")
+  
   set_target_properties(${the_module} PROPERTIES LABELS "${OPENCV_MODULE_${the_module}_LABEL};Module")
   set_source_files_properties(${OPENCV_MODULE_${the_module}_HEADERS} ${OPENCV_MODULE_${the_module}_SOURCES} ${${the_module}_pch}
     PROPERTIES LABELS "${OPENCV_MODULE_${the_module}_LABEL};Module")
