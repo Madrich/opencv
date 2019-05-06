@@ -895,7 +895,7 @@ void HoughLines( InputArray _image, OutputArray lines,
                  double rho, double theta, int threshold,
                  double srn, double stn, double min_theta, double max_theta )
 {
-    CV_INSTRUMENT_REGION()
+    CV_INSTRUMENT_REGION();
 
     int type = CV_32FC2;
     if (lines.fixedType())
@@ -918,7 +918,7 @@ void HoughLinesP(InputArray _image, OutputArray _lines,
                  double rho, double theta, int threshold,
                  double minLineLength, double maxGap )
 {
-    CV_INSTRUMENT_REGION()
+    CV_INSTRUMENT_REGION();
 
     CV_OCL_RUN(_image.isUMat() && _lines.isUMat(),
                ocl_HoughLinesP(_image, _lines, rho, theta, threshold, minLineLength, maxGap));
@@ -1355,6 +1355,8 @@ static void GetCircleCenters(const std::vector<int> &centers, std::vector<Vec4f>
 template<typename T>
 static void RemoveOverlaps(std::vector<T>& circles, float minDist)
 {
+    if (circles.size() <= 1u)
+        return;
     float minDist2 = minDist * minDist;
     size_t endIdx = 1;
     for (size_t i = 1; i < circles.size(); ++i)
@@ -1724,7 +1726,7 @@ static void HoughCircles( InputArray _image, OutputArray _circles,
                           int minRadius, int maxRadius,
                           int maxCircles, double param3 )
 {
-    CV_INSTRUMENT_REGION()
+    CV_INSTRUMENT_REGION();
 
     int type = CV_32FC3;
     if( _circles.fixedType() )
