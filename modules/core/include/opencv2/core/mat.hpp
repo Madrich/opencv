@@ -2368,7 +2368,14 @@ typedef Mat_<Vec3d> Mat3d;
 typedef Mat_<Vec4d> Mat4d;
 
 typedef Mat_<int64_t> Mat1l;
+typedef Mat_<Vec2l> Mat2l;
+typedef Mat_<Vec3l> Mat3l;
+typedef Mat_<Vec4l> Mat4l;
+
 typedef Mat_<int64_t> Mat1ul;
+typedef Mat_<Vec2ul> Mat2ul;
+typedef Mat_<Vec3ul> Mat3ul;
+typedef Mat_<Vec4ul> Mat4ul;
 
 /** @todo document */
 class CV_EXPORTS UMat

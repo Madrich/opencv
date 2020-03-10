@@ -411,6 +411,18 @@ typedef Vec<int, 4> Vec4i;
 typedef Vec<int, 6> Vec6i;
 typedef Vec<int, 8> Vec8i;
 
+typedef Vec<int64_t, 2> Vec2l;
+typedef Vec<int64_t, 3> Vec3l;
+typedef Vec<int64_t, 4> Vec4l;
+typedef Vec<int64_t, 6> Vec6l;
+typedef Vec<int64_t, 8> Vec8l;
+
+typedef Vec<int64_t, 2> Vec2ul;
+typedef Vec<int64_t, 3> Vec3ul;
+typedef Vec<int64_t, 4> Vec4ul;
+typedef Vec<int64_t, 6> Vec6ul;
+typedef Vec<int64_t, 8> Vec8ul;
+
 typedef Vec<float, 2> Vec2f;
 typedef Vec<float, 3> Vec3f;
 typedef Vec<float, 4> Vec4f;
