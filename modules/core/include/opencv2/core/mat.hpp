@@ -3637,6 +3637,9 @@ MatExpr operator <= (const Matx<_Tp, m, n>& a, const Mat& b) { return Mat(a) <= 
 
 CV_EXPORTS bool operator == (const Mat& a, const Mat& b);
 //CV_EXPORTS MatExpr operator == (const Mat& a, const Mat& b);
+CV_EXPORTS MatExpr equals (const Mat& a, const Mat& b); // replacement for old == Operator
+
+
 CV_EXPORTS MatExpr operator == (const Mat& a, double s);
 CV_EXPORTS MatExpr operator == (double s, const Mat& a);
 template<typename _Tp, int m, int n> static inline
