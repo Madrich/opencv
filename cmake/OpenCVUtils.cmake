@@ -1424,8 +1424,12 @@ macro(__ocv_push_target_link_libraries)
     endif()
     set(OPENCV_MODULE_${target}_LINK_DEPS ${OPENCV_MODULE_${target}_LINK_DEPS} ${ARGN} CACHE INTERNAL "" FORCE)
   else()
-    target_link_libraries(${target} ${ARGN})	
-	set_target_properties(${target} PROPERTIES SUFFIX "PC.dll") #
+    target_link_libraries(${target} ${ARGN})
+	IF(BUILD_SHARED_LIBS)
+	  set_target_properties(${target} PROPERTIES SUFFIX "PC.dll") #
+	ELSE()
+	  set_target_properties(${target} PROPERTIES SUFFIX "PC.lib") #
+	ENDIF()
   endif()
 endmacro()
 
