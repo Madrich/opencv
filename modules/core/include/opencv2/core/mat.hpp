@@ -3635,6 +3635,7 @@ MatExpr operator <= (const Mat& a, const Matx<_Tp, m, n>& b) { return a <= Mat(b
 template<typename _Tp, int m, int n> static inline
 MatExpr operator <= (const Matx<_Tp, m, n>& a, const Mat& b) { return Mat(a) <= b; }
 
+// Richard Steffen: Because we overwrite == operator to a bool expression
 CV_EXPORTS bool operator == (const Mat& a, const Mat& b);
 //CV_EXPORTS MatExpr operator == (const Mat& a, const Mat& b);
 CV_EXPORTS MatExpr equals (const Mat& a, const Mat& b); // replacement for old == Operator
@@ -3642,10 +3643,13 @@ CV_EXPORTS MatExpr equals (const Mat& a, const Mat& b); // replacement for old =
 
 CV_EXPORTS MatExpr operator == (const Mat& a, double s);
 CV_EXPORTS MatExpr operator == (double s, const Mat& a);
-//template<typename _Tp, int m, int n> static inline
+
+template<typename _Tp, int m, int n> static inline
 //MatExpr operator == (const Mat& a, const Matx<_Tp, m, n>& b) { return a == Mat(b); }
-//template<typename _Tp, int m, int n> static inline
+bool operator == (const Mat& a, const Matx<_Tp, m, n>& b) { return a == Mat(b); }
+template<typename _Tp, int m, int n> static inline
 //MatExpr operator == (const Matx<_Tp, m, n>& a, const Mat& b) { return Mat(a) == b; }
+bool operator == (const Matx<_Tp, m, n>& a, const Mat& b) { return Mat(a) == b; }
 
 CV_EXPORTS MatExpr operator != (const Mat& a, const Mat& b);
 CV_EXPORTS MatExpr operator != (const Mat& a, double s);

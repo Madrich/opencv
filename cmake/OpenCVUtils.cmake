@@ -1426,7 +1426,12 @@ macro(__ocv_push_target_link_libraries)
   else()
     target_link_libraries(${target} ${ARGN})
 	IF(BUILD_SHARED_LIBS)
-	  set_target_properties(${target} PROPERTIES SUFFIX "PC.dll") #
+    IF(WIN32)
+	    set_target_properties(${target} PROPERTIES SUFFIX "PC.dll") #
+    ELSEIF()
+      #FIXME: MacOSX
+      #set_target_properties(${target} PROPERTIES SUFFIX "PC.dll")
+    ENDIF()
 	ELSE()
 	  set_target_properties(${target} PROPERTIES SUFFIX "PC.lib") #
 	ENDIF()
